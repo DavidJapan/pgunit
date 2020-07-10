@@ -1,0 +1,5 @@
+@include('elements.inlinetemplates.textbox')
+@include('elements.inlinetemplates.textarea')
+@include('elements.inlinetemplates.selectbox')
+@include('elements.inlinetemplates.datepicker')
+@include('elements.inlinetemplates.toggle')
