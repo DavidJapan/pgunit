@@ -1,2 +1,5 @@
-*
+* 
 !.gitignore
+#This pattern prevents a push command from sending any files in this folder to the remote repo
+#This is what we want because the cached files tend to reflect a historic state in the app
+#and when we clone it we want to clone an app without cached files.
