@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <title>Pusher Test</title>
+  <script src="/js/pusher.min.js"></script>
+  <script>
+
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('8abc8d1405e5fd6db944', {
+      cluster: 'ap3'
+    });
+
+    var channel = pusher.subscribe('gudb0604Channel');
+    channel.bind('Gudb0604Event', function(data) {
+      alert(JSON.stringify(data));
+    });
+  </script>
+</head>
+<body>
+  <h1>Pusher Test</h1>
+  <p>
+    Try publishing an event to channel <code>gudb0604Channel</code>
+    with event name <code>Gudb0604Event</code>.
+  </p>
+</body>
+
