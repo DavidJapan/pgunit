@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false">
+    <testsuites>
+        <!--
+        <testsuite name="core">
+            <directory suffix="Test.php">./tests/core/app</directory>
+            <directory suffix="Test.php">./tests/core/welcome</directory>
+            <directory suffix="Test.php">./tests/core/authorisation</directory>
+            <directory suffix="Test.php">./tests/core/artisan</directory>
+            <directory suffix="Test.php">./tests/core/db_metadata_testing</directory>
+        </testsuite>
+        <testsuite name="event_handlers">
+            <directory suffix="Test.php">./tests/event_handlers/sectors</directory>
+        </testsuite>
+--> 
+        <testsuite name="datatables">
+            <directory suffix="Test.php">./tests/datatables/js_and_css</directory>
+            <directory suffix="Test.php">./tests/datatables/navigation</directory>
+            <directory suffix="Test.php">./tests/datatables/administer_users</directory>
+            <directory suffix="Test.php">./tests/datatables/datatable_controllers</directory>
+            <directory suffix="Test.php">./tests/datatables/standard_views</directory>
+            <directory suffix="Test.php">./tests/datatables/reports</directory>
+            <!--
+            <directory suffix="Test.php">./tests/datatables/autoload</directory>
+            <directory suffix="Test.php">./tests/datatables/qunit</directory>
+            <directory suffix="Test.php">./tests/datatables/branches</directory>
+            <directory suffix="Test.php">./tests/datatables/uploader</directory>
+            <directory suffix="Test.php">./tests/datatables/collective_agreements</directory>
+            <directory suffix="Test.php">./tests/datatables/excel</directory>
+                        -->
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app</directory>
+        </whitelist>
+    </filter>
+    <php>
+        <server name="APP_ENV" value="testing"/>
+        <server name="BCRYPT_ROUNDS" value="4"/>
+        <server name="CACHE_DRIVER" value="array"/>
+        <server name="MAIL_DRIVER" value="array"/>
+        <server name="QUEUE_CONNECTION" value="sync"/>
+        <server name="SESSION_DRIVER" value="array"/>
+    </php>
+</phpunit>
