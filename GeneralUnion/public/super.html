@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Using super in JavaScript</div>
+        <script>
+            class Rectangle {
+                constructor(height, width) {
+                    this.name = 'Rectangle';
+                    this.height = height;
+                    this.width = width;
+                }
+                sayName() {
+                    console.log('Hi, I am a ', this.name + '.');
+                    return 'Hi, I am a ', this.name + '.';
+                }
+                get area() {
+                    return this.height * this.width;
+                }
+                set area(value) {
+                    this._area = value;
+                }
+            }
+
+            class Square extends Rectangle {
+                constructor(length) {
+                    //this.height; // ReferenceError, super needs to be called first!
+
+                    // Here, it calls the parent class's constructor with lengths
+                    // provided for the Rectangle's width and height
+                    super(length, length);
+                    this.width = length;
+                    // Note: In derived classes, super() must be called before you
+                    // can use 'this'. Leaving this out will cause a reference error.
+                    this.name = 'Square';
+                    //console.log(super.sayName() + ' added by square.');
+                }
+                sayName(){
+                    super.sayName();
+                    console.log("2nd bit added by square.");
+                }
+                
+            }
+            var rect = new Rectangle(10,20);
+            console.log(rect.area);
+            var sq = new Square(12);
+            console.log(sq.area);
+            sq.sayName();
+        </script>
+    </body>
+</html>
