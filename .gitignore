@@ -22,3 +22,5 @@ Homestead.json
 /.vagrant
 .phpunit.result.cache
 /nbproject/
+/GeneralUnion/database/
+/GeneralUnion/node_modules/
