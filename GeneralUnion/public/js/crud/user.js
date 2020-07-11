@@ -27,6 +27,7 @@ ko.dt.Add.prototype.initAdd = function () {
     newItem = new ko.dt.NewItem(this, this.addItemFormId);
     $.extend(true, newItem, new ko.dt.User());
     //Don't call newItem.init(). We're initialising the newItem in User.
+    //MAKE SURE YOU DON'T CALL init()
     //newItem.init();
     newItem.setPostData = function () {
         var postData = {},
