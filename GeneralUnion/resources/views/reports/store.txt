@@ -1,5 +1,0 @@
-
-
-
-    @include( 'reports.individual_editor')
-

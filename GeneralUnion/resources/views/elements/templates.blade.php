@@ -1,6 +1,0 @@
-@include('elements.templates.textbox')
-@include('elements.templates.textarea')
-@include('elements.templates.selectbox')
-@include('elements.templates.datepicker')
-@include('elements.templates.readonly')
-@include('elements.templates.toggle')
